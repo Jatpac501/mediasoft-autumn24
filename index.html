@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <header class="header">
+            <div class="container" id="searchContact">
+                <img src="assets/search.png" alt="Поиск" class="contact__search-icon">
+                <input class="contact__search-input" id="searchInput" type="text" placeholder="Поиск контактов">
+            </div>
+        </header>
+        <main class="main">
+            <table class="container" id="contactList"></table>
+        </main>
+        <footer class="footer">
+            <div class="container">
+                <button class="contact_add" id="contact_add">Добавить контакт</button>
+            </div>
+        </footer>
+    </div>
+        <form class="contactForm" id="contactForm" method="post" enctype="multipart/form-data" action="javascript:updateContactsList()">
+            <h1>Добавить контакт</h1>
+            <input type="file" name="picture" id="picture" style="display: none;">
+            <label for="picture" class="picture-file">Добавить фото</label>
+            <input type="text" name="name" id="name" placeholder="Имя" required>
+            <input type="tel" name="phone" id="phone" placeholder="Номер" required>
+            <div class="checkbox">
+                <label for="isFavorite">Избранное</label>
+                <input type="checkbox" name="isFavorite" id="isFavorite">
+                <button type="submit">Добавить</button>
+            </div>
+        </form>
+    <script src="js/script.js"></script>
+</body>
+</html>
