@@ -21,11 +21,12 @@ header, main, footer {
     background: #33333C;
 }
 main {
-    margin-top:  calc(37px + 74px);
+    margin-top:  calc(37px + 74px - 2dvh);
 }
 .container {
     width: 40dvw;
     margin: auto;
+    border-spacing: 0 2dvh;
 }
 .contact_add {
     bottom: 24px;
@@ -69,6 +70,7 @@ main {
 
 .contact {
     width: 100%;
+    padding: 15px;
 }
 
 .contact__image {

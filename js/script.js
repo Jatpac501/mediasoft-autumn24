@@ -14,14 +14,7 @@ searchInput.addEventListener('input', () => {
 });
 
 // Добавление контакта
-const generateRandomColor = () => {
-    const letters = '0123456789ABCDEF';
-    let color = '#';
-    for (let i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
-};
+const generateRandomColor = () => '#' + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0');
 
 const updateContactsList = (filteredContacts = contacts) => {
     filteredContacts.sort((a, b) => {
@@ -79,6 +72,11 @@ contactForm.addEventListener('submit', async function (event) {
     const name = document.getElementById('name').value;
     const phone = document.getElementById('phone').value;
     const isFavorite = document.getElementById('isFavorite').checked;
+
+    if (name.value.trim() === '') {
+        alert('Пожалуйста, введите имя.');
+        return;
+    }
 
     const newContact = {
         id: Date.now(),
@@ -138,7 +136,7 @@ const saveContactsToCookies = () => {
         const { picture, ...contactWithoutPicture } = contact;
         return contactWithoutPicture;
     });
-    document.cookie = `contacts=${JSON.stringify(contactsWithoutPictures)}; path=/; max-age=99999999`;
+    document.cookie = `contacts=${JSON.stringify(contactsWithoutPictures)}; path=/; max-age=${60 * 60 * 24 * 365}`;
 };
 const loadContactsFromCookies = () => {
     const cookies = document.cookie.split('; ');

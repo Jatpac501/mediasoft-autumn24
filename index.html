@@ -27,8 +27,8 @@
             <h1>Добавить контакт</h1>
             <input type="file" name="picture" id="picture" style="display: none;">
             <label for="picture" class="picture-file">Добавить фото</label>
-            <input type="text" name="name" id="name" placeholder="Имя" required>
-            <input type="tel" name="phone" id="phone" placeholder="Номер" required>
+            <input type="text" name="name" id="name" placeholder="Имя" maxlength="255" required>
+            <input type="tel" name="phone" id="phone" placeholder="+79001234567" pattern="\+7\d{10}" value="+7" required>
             <div class="checkbox">
                 <label for="isFavorite">Избранное</label>
                 <input type="checkbox" name="isFavorite" id="isFavorite">
