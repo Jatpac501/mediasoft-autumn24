@@ -73,11 +73,6 @@ contactForm.addEventListener('submit', async function (event) {
     const phone = document.getElementById('phone').value;
     const isFavorite = document.getElementById('isFavorite').checked;
 
-    if (name.value.trim() === '') {
-        alert('Пожалуйста, введите имя.');
-        return;
-    }
-
     const newContact = {
         id: Date.now(),
         picture: pictureBase64,
